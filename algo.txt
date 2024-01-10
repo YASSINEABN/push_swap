@@ -1,0 +1,62 @@
+//         if(k == i-1 || !check_list_value(stack_a , start,end,mid,sorted_list))
+//         {
+//             k = 0;
+           
+//             start -= offset;
+//              if(start < 0)
+//                 start = 0;
+                
+//             end += offset;
+//         }
+//             i = size(stack_a);
+//         if(i == 0)
+//             break;
+//   }
+
+
+
+
+//  while(k < i)
+//  {
+//     pos =  check_value(sorted_listt[k] , stack_a) ;
+
+        
+//         if(pos > size(stack_a)/2)
+//         {
+           
+//             pos =  size(stack_a) -pos;
+           
+//             pos++;
+//             //   printf("%d \n",pos);
+//             while (pos > 0)
+//             {
+//                 rotate_stack_large(&stack_a);
+//                  printf("raa \n");
+//                 pos--;
+                
+//             }
+//         }
+//         else
+//         {
+//               while (pos-- > 1)
+//          {
+             
+//              rotate_stack(&stack_a);
+//              printf("ra \n");
+                
+//             }
+//         }
+//         push_b(&stack_a,&stack_b);
+//           printf("pb \n");
+       
+//      k++;
+   
+    
+//  }
+//  k = 0;
+//  while (k < i)
+//  {
+//      push_a(&stack_a,&stack_b);
+//      printf("pa \n");
+//      k++;
+//  }
