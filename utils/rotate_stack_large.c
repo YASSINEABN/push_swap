@@ -1,10 +1,10 @@
 #include "../push_swap.h"
 
 void rotate_stack_large(l **stack_a) {
-    if (*stack_a == NULL || (*stack_a)->next == NULL) {
-        // Nothing to rotate if the stack is empty or has only one element
-        return;
-    }
+    // if (*stack_a == NULL || (*stack_a)->next == NULL) {
+    //     // Nothing to rotate if the stack is empty or has only one element
+    //     return;
+    // }
 
     l *lastNode = *stack_a;
     while (lastNode->next->next) {

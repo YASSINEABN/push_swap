@@ -113,8 +113,8 @@ int check_lastnode(l *stack_a , int a)
                          pos++;
                         while (pos--)
                         {
-                            rotate_stack_large(stack_b);
-                            // actions("rrb",stack_a,stack_b);
+                            // rotate_stack_large(stack_b);
+                                apply_actions("rrb",stack_a,stack_b);
                         }
 
                      }   
@@ -123,12 +123,12 @@ int check_lastnode(l *stack_a , int a)
                         while (pos-- > 1)
                         {
                 
-                            rotate_stack(stack_b);
-                            // actions("rb",stack_a,stack_b);
+                            // rotate_stack(stack_b);
+                            apply_actions("rb",stack_a,stack_b);
                         }
                     }
-                    push_a(stack_a,stack_b);
-                    // actions("pa",stack_a,stack_b);
+                    // push_a(stack_a,stack_b);
+                    apply_actions("pa",stack_a,stack_b);
               }
 
                      void  check_coords(int *start , int offset , int *end , int *k , l **stack_a ,int i)
@@ -178,19 +178,19 @@ int check_lastnode(l *stack_a , int a)
                         {   
                             if(test == 1)
                             {
-                                 push_b(stack_a,stack_b);
-                                rotate_stack(stack_b);
-                                // actions("pb",stack_a,stack_b);
-                                // actions("rb",stack_a,stack_b);
+                                //  push_b(stack_a,stack_b);
+                                // rotate_stack(stack_b);
+                                apply_actions("pb",stack_a,stack_b);
+                                apply_actions("rb",stack_a,stack_b);
                                 test = 0;
                             }
                             else
-                                push_b(stack_a,stack_b);
-                                // actions("pb",stack_a,stack_b);
+                                // push_b(stack_a,stack_b);
+                                apply_actions("pb",stack_a,stack_b);
                         }
                         else
-                        rotate_stack(stack_a);
-                            // actions("ra",stack_a,stack_b);
+                            // rotate_stack(stack_a);
+                            apply_actions("ra",stack_a,stack_b);
 
                         k++;
                         
@@ -216,7 +216,7 @@ int check_lastnode(l *stack_a , int a)
         --st;
     
      
-        while (1)
+        while ((*stack_b)->next)
         {
                 if(check == 0)
                 {
@@ -237,7 +237,8 @@ int check_lastnode(l *stack_a , int a)
                 if(tmp == max && m==1)
                 {
                     m = 0;
-                    rotate_stack_large(stack_a);
+                    // rotate_stack_large(stack_a);
+                    apply_actions("rra",stack_a,stack_b);
                     --st;
                      max = sorted_list[st];
                 }
@@ -247,15 +248,18 @@ int check_lastnode(l *stack_a , int a)
                 {
                     if(val != max)
                     {
-                        push_a(stack_a, stack_b);
-                        rotate_stack(stack_a);
+                        // push_a(stack_a, stack_b);
+                        apply_actions("pa",stack_a,stack_b);
+                        // rotate_stack(stack_a);
+                        apply_actions("ra",stack_a,stack_b);
                         m = 1;
                         tmp = val;
                     }
                     
                     else
                     {
-                        push_a(stack_a, stack_b);
+                        // push_a(stack_a, stack_b);
+                         apply_actions("pa",stack_a,stack_b);
                         st--;
                     }
                     
@@ -269,19 +273,16 @@ int check_lastnode(l *stack_a , int a)
                         find_best_move(stack_a,stack_b,pos_of_max,size_stack_b);
                          st--;
                     }
-            
-            if(*stack_b == NULL)
-                break;                               
-        }
+                                       
+        }   
         }
 
-
-
-    //   printf("---------------------------------- \n");
-      if(check_lastnode(*stack_a,(*stack_a)->value))
+if(check_lastnode(*stack_a,(*stack_a)->value))
       {
             rotate_stack_large(stack_a);
       }
+      
+      
               } 
 int main(int argc, char const *argv[])
 {
@@ -306,21 +307,24 @@ int main(int argc, char const *argv[])
     int *sorted_list = sorted_array(stack_a);
     make_stack_b(&stack_a,&stack_b,sorted_list);
     make_stack_a(&stack_a,&stack_b,sorted_list);
+       
+
+
 
 
               //  printf("----------------------------------\n");
     
-   while(stack_b)
-    {
-        printf("%d\n",stack_b->value);
-       stack_b = stack_b->next;
-    }
+//    while(stack_b)
+//     {
+//         printf("%d\n",stack_b->value);
+//        stack_b = stack_b->next;
+//     }
 
-        while(stack_a)
-            {
-                printf("%d\n",stack_a->value);
-                stack_a = stack_a->next;
-            }
+        // while(stack_a)
+        //     {
+        //         printf("%d\n",stack_a->value);
+        //         stack_a = stack_a->next;
+        //     }
      
         
   return 0;
@@ -328,4 +332,3 @@ int main(int argc, char const *argv[])
 
 
   
-

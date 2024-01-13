@@ -2,9 +2,9 @@
 
 void push_a(l **stack_a, l **stack_b)
 {
-    if (*stack_b == NULL) {
-        return;
-    }
+    // if (*stack_b == NULL) {
+    //     return;
+    // }
     l *temp = *stack_b;
     *stack_b = (*stack_b)->next;
 

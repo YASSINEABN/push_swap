@@ -11,11 +11,10 @@ typedef struct List {
     int value;
     struct List* next;
 } l;
-
+ void    apply_actions(char *action ,l **stack_a, l **stack_b);
 void push_a(l **stack_a, l **stack_b);
 void push_b(l **stack_a, l **stack_b);
 void rotate_stack_large(l **stack_a);
-void actions(char *action,l **stack_a,l **stack_b);
 int sorted_list(l* list);
 void sorted_list_three(l** list);
 void swap_stack(l** list );
@@ -27,8 +26,6 @@ l* max_list(l* list);
 void rotate_stack(l** list );
 void revrot_stack(l** list);
 int *sorted_array(l *list);
-
-
 
 
 #endif

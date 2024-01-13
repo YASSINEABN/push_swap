@@ -2,10 +2,10 @@
 
 void push_b(l **stack_a, l **stack_b)
 {
-    if (*stack_a == NULL) {
-        // If stack_a is empty, there's nothing to push
-        return;
-    }
+    // if (*stack_a == NULL) {
+    //     // If stack_a is empty, there's nothing to push
+    //     return;
+    // }
 
     // Pop from stack_a
     l *temp = *stack_a;
