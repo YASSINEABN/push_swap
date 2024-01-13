@@ -3,7 +3,7 @@
 
 int *sorted_array(l *list)
 {
-    int T[100];
+    int T[2500];
     int i = 0;
     while(list)
     {

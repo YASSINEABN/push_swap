@@ -22,6 +22,17 @@ int size(l *list)
     }
     return count;
 }
+int check_lastnode(l *stack_a , int a)
+{
+    while (stack_a->next)
+    {
+       stack_a = stack_a->next;
+    }
+    if(stack_a->value >a)
+        return 0;
+        else
+            return 1;
+}
 
 // void    sorted_list_three(l **list)
 // 				{
@@ -103,7 +114,7 @@ int size(l *list)
                         while (pos--)
                         {
                             rotate_stack_large(stack_b);
-                                printf("rbb \n");
+                            // actions("rrb",stack_a,stack_b);
                         }
 
                      }   
@@ -113,12 +124,165 @@ int size(l *list)
                         {
                 
                             rotate_stack(stack_b);
-                                printf("rb \n");
+                            // actions("rb",stack_a,stack_b);
                         }
                     }
                     push_a(stack_a,stack_b);
-                    printf("pa \n");
+                    // actions("pa",stack_a,stack_b);
               }
+
+                     void  check_coords(int *start , int offset , int *end , int *k , l **stack_a ,int i)
+              {
+                 *k = 0;
+                    
+                        *start -= offset;
+                        if(start < 0)
+                            *start = 0;
+                            
+                        *end += offset;
+                        if(*end==i)
+                            *end = i-1;
+              }
+                void init_coords(int *i, int *offset, int *mid, int *start, int *end, int *k, int *test, l *stack_a)
+                {
+                    *i = size(stack_a);
+                    *mid = *i / 2 - 1;
+
+                    if (*i > 100)
+                        *offset = *i / 18;
+                    else
+                        *offset = *i / 8;
+
+                    *start = *mid - *offset;
+                    *end = *mid + *offset;
+                    *k = 0;
+                    *test = 0;
+                }
+
+             void make_stack_b(l **stack_a,l **stack_b ,int *sorted_list)
+              {
+                    int i ;
+                    int l;
+                    int offset;
+                    int mid ;
+                    int start;
+                    int end;
+                    int k;
+                    int test; 
+                    init_coords(&i , &offset , &mid , &start ,&end,&k,&test,*stack_a);
+
+                    while (1)
+                    {
+                        test = 0;
+                        if(check_value(sorted_list , start , end ,(*stack_a)->value , &test , mid))
+                        {   
+                            if(test == 1)
+                            {
+                                 push_b(stack_a,stack_b);
+                                rotate_stack(stack_b);
+                                // actions("pb",stack_a,stack_b);
+                                // actions("rb",stack_a,stack_b);
+                                test = 0;
+                            }
+                            else
+                                push_b(stack_a,stack_b);
+                                // actions("pb",stack_a,stack_b);
+                        }
+                        else
+                        rotate_stack(stack_a);
+                            // actions("ra",stack_a,stack_b);
+
+                        k++;
+                        
+                        if(k == i-1 || !check_list_value(*stack_a , start,end,mid,sorted_list))
+                            check_coords(&start , offset , &end , &k ,stack_a , i);
+                        if(*stack_a == NULL)
+                            break;
+
+                 }
+              }
+
+              void make_stack_a(l **stack_a,l **stack_b, int *sorted_list)
+              {
+                      int check = 0;
+        int size_stack_b = size(*stack_b);    
+        int pos_of_max; 
+        int  max; 
+        int val ;
+       int st = size(*stack_b);
+       int m =0;
+       int tmp;
+   
+        --st;
+    
+     
+        while (1)
+        {
+                if(check == 0)
+                {
+                       size_stack_b = size(*stack_b);  
+                         pos_of_max = pos(*stack_b,sorted_list[st]);
+                   find_best_move(stack_a,stack_b,pos_of_max,size_stack_b);
+                   --st;
+                    check = 1;  
+                }
+              
+            else
+            {
+                size_stack_b = size(*stack_b);
+                val = (*stack_b)->value;
+                max = sorted_list[st];
+              
+                
+                if(tmp == max && m==1)
+                {
+                    m = 0;
+                    rotate_stack_large(stack_a);
+                    --st;
+                     max = sorted_list[st];
+                }
+                
+                   
+                if(m == 0)
+                {
+                    if(val != max)
+                    {
+                        push_a(stack_a, stack_b);
+                        rotate_stack(stack_a);
+                        m = 1;
+                        tmp = val;
+                    }
+                    
+                    else
+                    {
+                        push_a(stack_a, stack_b);
+                        st--;
+                    }
+                    
+                }
+                else
+                    {
+                   
+                        size_stack_b = size(*stack_b);
+                         max = sorted_list[st];
+                        pos_of_max = pos(*stack_b,max);
+                        find_best_move(stack_a,stack_b,pos_of_max,size_stack_b);
+                         st--;
+                    }
+            
+            if(*stack_b == NULL)
+                break;                               
+        }
+        }
+
+
+
+    //   printf("---------------------------------- \n");
+      if(check_lastnode(*stack_a,(*stack_a)->value))
+      {
+            rotate_stack_large(stack_a);
+      }
+              } 
 int main(int argc, char const *argv[])
 {
     int i = 1;
@@ -137,204 +301,31 @@ int main(int argc, char const *argv[])
         ft_list_new(&heada,a);
         i++;
     }
-     
-    // rotate_stack(&stack_a);
-    // swap_stack(&stack_a);
-    // rotate_stack(&stack_a);
-    // swap_stack(&stack_a);
-    // while(stack_a)
-    // {
-    //     printf("%d\n",stack_a->value);
-    //     stack_a = stack_a->next;
-    // }
-
-        //   l *node_min = min_list(stack_a);
-        //  l *node_max = max_list(stack_a);
-        //  printf("max is %d \n MIN is %d ",node_max->value,node_min->value);
-     
-    // if(size(stack_a) == 3)
-    // {
-    //     sorted_list_three(&stack_a);
-    // }
-    // printf("\n");
-
-//   while(stack_a)
-//     {
-//         printf("%d\n",stack_a->value);
-//         stack_a = stack_a->next;
-//     }
 
 
-int *sorted_list = sorted_array(stack_a);
-  i = size(stack_a);
-  int mid = i / 2 -1;
-  int div ;
-  if(i >100)
-        div = i /11;
-    if (i <= 100)
-        div = i / 8;
-  int offset = div;
-  int start = mid -offset;
-  int end = mid +offset;
-  int k = 0;
-  int test = 0;
-  int l; 
-//   int position = 0;
-//   printf("mid %d \n",sorted_list[mid]);
-//   printf("length = %d  mid = %d \n div = %d \n start = %d \n end =%d \n ", i , mid , div ,start , end);
-  while (k < i)
-  {
-    test = 0;
-    l= stack_a->value;
-        if(check_value(sorted_list , start , end , l, &test , mid))
-        {
-            if(test == 1)
-            {
-                push_b(&stack_a,&stack_b);
-                    printf("pb \n");
-                rotate_stack(&stack_b);
-                    printf("rb \n");
-                test = 0;
-            }
-            else
-            {
-                push_b(&stack_a,&stack_b);
-                    printf("pb \n");
-            }
-        }
-        else
-        {
-            rotate_stack(&stack_a);
-                printf("ra \n");
-            // position = pos(stack_a,a);
-            // if(position< i /2)
-            //  {
-
-            //  }
-        }
-
-        k++;
-        
-        if(k == i-1 || !check_list_value(stack_a , start,end,mid,sorted_list))
-        {
-            k = 0;
-           
-            start -= offset;
-             if(start < 0)
-                start = 0;
-                
-            end += offset;
-            if(end==i)
-                end = i-1;
-        }
-       
-        // printf("--------------------------------------");
-        // printf("length = %d  mid = %d \n div = %d \n start = %d \n end =%d \n ", i , mid , div ,start , end);
-        if(stack_a == NULL)
-            break;
-
-  }
-            
+    int *sorted_list = sorted_array(stack_a);
+    make_stack_b(&stack_a,&stack_b,sorted_list);
+    make_stack_a(&stack_a,&stack_b,sorted_list);
 
 
-  int check = 0;
-        int size_stack_b = size(stack_b);    
-        int pos_of_max; 
-        int  max; 
-        int val ;
-while (1)
-{
-        max = max_list(stack_b)->value;
-            size_stack_b = size(stack_b);  
-             pos_of_max = pos(stack_b,max);
-        find_best_move(&stack_a,&stack_b,pos_of_max,size_stack_b);
-             if(stack_b == NULL)
-                break;   
-
-}
-
-        // // printf("%d",size_stack_b);
-        // while (1)
-        // {
-        //     max = max_list(stack_b)->value;
-        //     size_stack_b = size(stack_b);  
-        //       pos_of_max = pos(stack_b,max);
-           
-        //         if(check == 0)
-        //         {
-        //            find_best_move(&stack_a,&stack_b,pos_of_max,size_stack_b);
-        //             check = 1;  
-        //         }
-        //     else
-        //     {
-        //         size_stack_b = size(stack_b);
-        //         val = stack_b->value;
-        //         if(val == max)
-        //         {
-        //             push_a(&stack_a, &stack_b);
-        //             printf("pa \n");
-        //         }
-        //         else
-        //             {
-        //                 push_a(&stack_a, &stack_b);
-        //                 printf("pa \n");
-        //                 rotate_stack(&stack_a);
-        //                 printf("ra \n");
-        //                 size_stack_b = size(stack_b);
-        //                 pos_of_max = pos(stack_b,max);
-        //                 size_stack_b = size(stack_b);
-        //                 find_best_move(&stack_a,&stack_b,pos_of_max,size_stack_b);
-        //                 rotate_stack_large(&stack_a);
-        //                 printf("rra \n");
-        //             }
-        //     }
-        //     if(stack_b == NULL)
-        //         break;                               
-        // }
-
-//      printf("\n ----------------------------------");
+              //  printf("----------------------------------\n");
     
-//    while(stack_b)
-//     {
-//         printf("%d\n",stack_b->value);
-//        stack_b = stack_b->next;
-//     }
+   while(stack_b)
+    {
+        printf("%d\n",stack_b->value);
+       stack_b = stack_b->next;
+    }
 
-//       printf("---------------------------------- \n");
-          
-//    while(stack_a)
-//     {
-//         printf("%d\n",stack_a->value);
-//        stack_a = stack_a->next;
-//     }
-
+        while(stack_a)
+            {
+                printf("%d\n",stack_a->value);
+                stack_a = stack_a->next;
+            }
+     
+        
   return 0;
   }
- // if(pos > size(stack_a)/2)
-//         {
-           
-//             pos =  size(stack_a) -pos;
-           
-//             pos++;
-//             //   printf("%d \n",pos);
-//             while (pos > 0)
-//             {
-//                 rotate_stack_large(&stack_a);
-//                  printf("raa \n");
-//                 pos--;
-                
-//             }
-//         }
-//         else
-//         {
-//               while (pos-- > 1)
-//          {
-             
-//              rotate_stack(&stack_a);
-//              printf("ra \n");
-                
-//             }
-//         }
+
 
   
 
