@@ -112,11 +112,7 @@ int check_lastnode(l *stack_a , int a)
                         pos = size - pos;
                          pos++;
                         while (pos--)
-                        {
-                            // rotate_stack_large(stack_b);
                                 apply_actions("rrb",stack_a,stack_b);
-                        }
-
                      }   
                     else
                     {
@@ -146,10 +142,9 @@ int check_lastnode(l *stack_a , int a)
                 void init_coords(int *i, int *offset, int *mid, int *start, int *end, int *k, int *test, l *stack_a)
                 {
                     *i = size(stack_a);
-                    *mid = *i / 2 - 1;
-
+                    *mid = (*i / 2) - 1;
                     if (*i > 100)
-                        *offset = *i / 18;
+                        *offset = *i /17;
                     else
                         *offset = *i / 8;
 
@@ -158,7 +153,23 @@ int check_lastnode(l *stack_a , int a)
                     *k = 0;
                     *test = 0;
                 }
+                 void do_something(int *test , l **stack_a,l**stack_b,int start , int end , int mid , int *sorted_list )
+                 {
+                        if(*test == 1)
+                            {
+                    
+                                    apply_actions("pb",stack_a,stack_b);
+                                     if((*stack_a) != NULL && !(check_value(sorted_list , start , end ,(*stack_a)->value , test , mid)) )
+                                         apply_actions("rr",stack_a,stack_b);
+                                     else
+                                        apply_actions("rb",stack_a,stack_b);
 
+                                *test = 0;
+                            }
+                            else
+                                apply_actions("pb",stack_a,stack_b);
+                 }
+        
              void make_stack_b(l **stack_a,l **stack_b ,int *sorted_list)
               {
                     int i ;
@@ -169,39 +180,51 @@ int check_lastnode(l *stack_a , int a)
                     int end;
                     int k;
                     int test; 
+                    int check = 0;
                     init_coords(&i , &offset , &mid , &start ,&end,&k,&test,*stack_a);
 
                     while (1)
                     {
                         test = 0;
                         if(check_value(sorted_list , start , end ,(*stack_a)->value , &test , mid))
-                        {   
+                         
                             if(test == 1)
                             {
-                                //  push_b(stack_a,stack_b);
-                                // rotate_stack(stack_b);
-                                apply_actions("pb",stack_a,stack_b);
-                                apply_actions("rb",stack_a,stack_b);
+                    
+                                    apply_actions("pb",stack_a,stack_b);
+                                     if((*stack_a) != NULL && !(check_value(sorted_list , start , end ,(*stack_a)->value , &test , mid)) )
+                                         apply_actions("rr",stack_a,stack_b);
+                                     else
+                                        apply_actions("rb",stack_a,stack_b);
+
                                 test = 0;
                             }
                             else
-                                // push_b(stack_a,stack_b);
                                 apply_actions("pb",stack_a,stack_b);
-                        }
+                        
+                            //  do_something(&test , stack_a,stack_b,start,end,mid,sorted_list);
                         else
-                            // rotate_stack(stack_a);
                             apply_actions("ra",stack_a,stack_b);
 
                         k++;
-                        
+                        // print_stack(*stack_b);
                         if(k == i-1 || !check_list_value(*stack_a , start,end,mid,sorted_list))
                             check_coords(&start , offset , &end , &k ,stack_a , i);
-                        if(*stack_a == NULL)
+                        if((*stack_a) == NULL)
                             break;
-
                  }
               }
 
+        int last_node(l *stack_a)
+        {
+            l *tmp =stack_a;
+            while (tmp->next)
+            {
+            tmp = tmp->next;
+            }
+            return tmp->value;
+            
+        }
               void make_stack_a(l **stack_a,l **stack_b, int *sorted_list)
               {
                       int check = 0;
@@ -244,7 +267,7 @@ int check_lastnode(l *stack_a , int a)
                 }
                 
                    
-                if(m == 0)
+                else if (m == 0)
                 {
                     if(val != max)
                     {
@@ -266,18 +289,19 @@ int check_lastnode(l *stack_a , int a)
                 }
                 else
                     {
-                   
-                        size_stack_b = size(*stack_b);
-                         max = sorted_list[st];
-                        pos_of_max = pos(*stack_b,max);
-                        find_best_move(stack_a,stack_b,pos_of_max,size_stack_b);
-                         st--;
+                            size_stack_b = size(*stack_b);
+                            max = sorted_list[st];
+                            pos_of_max = pos(*stack_b,max);
+                            find_best_move(stack_a,stack_b,pos_of_max,size_stack_b);
+                            st--;
+    
                     }
-                                       
+
+                                    
         }   
         }
 
-if(check_lastnode(*stack_a,(*stack_a)->value))
+        if(check_lastnode(*stack_a,(*stack_a)->value))
       {
             rotate_stack_large(stack_a);
       }
@@ -307,24 +331,26 @@ int main(int argc, char const *argv[])
     int *sorted_list = sorted_array(stack_a);
     make_stack_b(&stack_a,&stack_b,sorted_list);
     make_stack_a(&stack_a,&stack_b,sorted_list);
+    // printf("last node %d ", last_node(stack_a));
        
 
 
 
 
               //  printf("----------------------------------\n");
+//               printf("-----------------------------stackb------------------------ \n");
     
 //    while(stack_b)
 //     {
 //         printf("%d\n",stack_b->value);
 //        stack_b = stack_b->next;
 //     }
-
-        // while(stack_a)
-        //     {
-        //         printf("%d\n",stack_a->value);
-        //         stack_a = stack_a->next;
-        //     }
+// printf("-----------------------------stacka------------------------ \n");
+//         while(stack_a)
+//             {
+//                 printf("%d\n",stack_a->value);
+//                 stack_a = stack_a->next;
+//             }
      
         
   return 0;

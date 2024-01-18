@@ -26,6 +26,7 @@ l* max_list(l* list);
 void rotate_stack(l** list );
 void revrot_stack(l** list);
 int *sorted_array(l *list);
+void rotate_stack_both(l **stack_a , l **satck_b);
 
 
 #endif

@@ -32,5 +32,10 @@
             printf("rra \n");
             rotate_stack_large(stack_a);
         }
+        if(!strcmp(action,"rr"))
+        {
+            printf("rr \n");
+            rotate_stack_both(stack_a,stack_b);
+        }
         
     }
