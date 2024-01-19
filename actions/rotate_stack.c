@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:41 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/19 13:51:36 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/19 21:41:45 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ void	rotate_stack(l **list)
 	(*list)->value = first_value;
 	(*list) = current;
 }
-

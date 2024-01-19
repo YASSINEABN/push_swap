@@ -58,8 +58,9 @@ int main(int argc, char const *argv[])
 
 
     int *sorted_list = sorted_array(stack_a);
-     make_stack_b(&stack_a,&stack_b,sorted_list);
-     make_stack_a(&stack_a,&stack_b,sorted_list);
+    make_stack_b(&stack_a,&
+    stack_b,sorted_list);
+    make_stack_a(&stack_a,&stack_b,sorted_list);
     // printf("last node %d ", last_node(stack_a));
        
 

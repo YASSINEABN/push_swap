@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_stack_both.c                                :+:      :+:    :+:   */
+/*   check_mid.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/19 11:19:36 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/19 21:39:13 by yaboulan         ###   ########.fr       */
+/*   Created: 2024/01/19 21:12:56 by yaboulan          #+#    #+#             */
+/*   Updated: 2024/01/19 21:13:18 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rotate_stack_both(l **stack_a, l **stack_b)
+int	check_mid(int val, int *p, int mid, int *t)
 {
-	rotate_stack(stack_a);
-	rotate_stack(stack_b);
-	printf("rr \n");
+	if (val < p[mid])
+		*t = 1;
+	return (1);
 }

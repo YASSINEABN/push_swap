@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:27 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/19 11:55:27 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/19 21:37:39 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	push_a(l **stack_a, l **stack_b)
 	*stack_b = (*stack_b)->next;
 	temp->next = *stack_a;
 	*stack_a = temp;
+	printf("pa \n");
 }

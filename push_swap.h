@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:18:52 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/19 11:18:53 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:11:32 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ int *sorted_array(l *list);
 void rotate_stack_both(l **stack_a , l **satck_b);
 void ft_list_new(l **list , int a);
 int check_lastnode(l *stack_a , int a);
-int check_value(int *p , int start  , int end , int a , int *t , int mid);
+int	check_value(int *p, int start, int end, int a);
 int size(l *list);
 int pos(l *stack_a, int value);
-int check_list_value(l *stack_a , int start ,int end , int mid , int *p );
+int check_list_value(l *stack_a , int start ,int end , int *p );
 void find_best_move(l **stack_a, l **stack_b , int pos, int size);
 void	check_coords(int *start, int offset, int *end, l **stack_a,int i);
-void	init_coords_stack_b(int i, int *offset, int *mid, int *start, int *end, int *test, l *stack_a);
-void do_something(int *test , l **stack_a,l**stack_b,int start , int end , int mid , int *sorted_list );
+void	init_coords_stack_b(int i, int *offset, int *start, int *end);
+void do_something(int *test , l **stack_a,l**stack_b,int start , int end , int *sorted_list );
 void make_stack_b(l **stack_a,l **stack_b ,int *sorted_list);
  void init_coords_stack_a(int *m  , int *st , l *stack_b);
  int last_node(l *stack_a);
@@ -58,4 +58,5 @@ void push_max(int size_stack_b , int *max , int *pos_of_max , l **stack_a , l **
 void push_item(int val , int max , l **stack_a , l **stack_b , int *tmp , int *m , int *st);
 void	init_svm(int *max, l *stack_b,int *sorted_list, int st);
 void make_stack_a(l **stack_a,l **stack_b, int *sorted_list);
+int check_mid(int val , int *p , int mid , int *t);
 #endif
