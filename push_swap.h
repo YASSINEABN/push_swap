@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:18:52 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/19 17:11:32 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:06:13 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ typedef struct List {
     int value;
     struct List* next;
 } l;
+typedef struct coords
+{
+    int offset;
+    int mid;
+    int start;
+    int end;
+}coords;
+
 void    apply_actions(char *action ,l **stack_a, l **stack_b);
 void push_a(l **stack_a, l **stack_b);
 void push_b(l **stack_a, l **stack_b);
