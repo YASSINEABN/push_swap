@@ -1,7 +1,7 @@
 #include "../push_swap.h"
 
-void	init_svm(int *max, l *stack_b,
-		int *sorted_list, int st)
+void	init_svm( c_stacka **stack ,l *stack_b,int *sorted_list)
 {
-	*max = sorted_list[st];
+	int st = (*stack)->st;
+	(*stack)->max =sorted_list[st] ;
 }

@@ -1,19 +1,19 @@
 #include "../push_swap.h"
 
-void	push_item(int val, int max, l **stack_a, l **stack_b, int *tmp, int *m,
-		int *st)
+void	push_item(l **stack_a, l **stack_b,c_stacka **stack )
 {
-	if (val != max)
+	int val = (*stack_b)->value; 
+	if (val != (*stack)->max)
 	{
 		apply_actions("pa", stack_a, stack_b);
 		apply_actions("ra", stack_a, stack_b);
-		*m = 1;
-		*tmp = val;
+		(*stack)->m = 1;
+		(*stack)->tmp = val;
 	}
 
 	else
 	{
 		apply_actions("pa", stack_a, stack_b);
-		(*st)--;
+		(*stack)->st--;
 	}
 }

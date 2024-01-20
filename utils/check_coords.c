@@ -1,13 +1,13 @@
 #include "../push_swap.h"
 
-void	check_coords(int *start, int offset, int *end, l **stack_a,int i)
+void	check_coords(coords **coords, l **stack_a,int i)
 {
 
-	*start -= offset;
-	if (start < 0)
-		*start = 0;
+	(*coords)->start -= (*coords)->offset;
+	if ((*coords)->start < 0)
+		(*coords)->start = 0;
 
-	*end += offset;
-	if (*end == i)
-		*end = i - 1;
+	(*coords)->end += (*coords)->offset;
+	if ((*coords)->end == i)
+		(*coords)->end = i - 1;
 }
