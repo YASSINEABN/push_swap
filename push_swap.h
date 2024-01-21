@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:18:52 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/21 10:28:26 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/21 11:11:26 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int size(l *list);
 int pos(l *stack_a, int value);
 int	check_list_value(l *stack_a, coords *coords, int *p);
 void find_best_move(l **stack_a, l **stack_b , int pos, int size);
-void	check_coords(coords **coords, l **stack_a,int i);
+void	check_coords(coords **coords,int i);
 void	init_coords_stack_b(int i, coords **coords);
 void do_something(l **stack_a,l**stack_b,coords *coords, int *sorted_list );
 void make_stack_b(l **stack_a,l **stack_b ,int *sorted_list);
@@ -72,7 +72,7 @@ void	init_coords_stack_a(c_stacka **stack, l *stack_b, int *sorted_list);
 void	rotate_tmp(c_stacka **stack, l **stack_a, l **stack_b,int *sorted_list);
 void	push_max( c_stacka **stack , l **stack_a, l **stack_b, int *sorted_list);
 void	push_item(l **stack_a, l **stack_b,c_stacka **stack );
-void	init_svm( c_stacka **stack,l *stack_b,int *sorted_list);
+void	init_svm( c_stacka **stack,int *sorted_list);
 void make_stack_a(l **stack_a,l **stack_b, int *sorted_list);
 void five_sort(l **stack_a,l **stack_b);
 

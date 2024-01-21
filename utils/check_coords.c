@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-void	check_coords(coords **coords, l **stack_a,int i)
+void	check_coords(coords **coords,int i)
 {
 
 	(*coords)->start -= (*coords)->offset;

@@ -24,7 +24,7 @@
 			else
 				apply_actions("ra", stack_a, stack_b);
 			 if (!check_list_value(*stack_a, coords, sorted_list))
-					check_coords(&coords, stack_a, size(*stack_a) + size(*stack_b));
+					check_coords(&coords, size(*stack_a) + size(*stack_b));
 		
 				if ((*stack_a) == NULL)
 					break ;

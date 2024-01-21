@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:06 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/21 09:14:12 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/21 11:11:34 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	make_stack_a(l **stack_a, l **stack_b, int *sorted_list)
 	// pos_of_max = pos(*stack_b, sorted_list[coords->st]);
 	while ((*stack_b))
 	{
-		init_svm(&coords, *stack_b, sorted_list);
+		init_svm(&coords, sorted_list);
 		if (coords->tmp == coords->max && coords->m == 1)
 			rotate_tmp(&coords, stack_a, stack_b ,sorted_list);
 		else if (coords->m == 0)

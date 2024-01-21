@@ -2,7 +2,6 @@
 
 int	check_list_value(l *stack_a, coords *coords, int *p)
 {
-	int k = 1;
 	int a;
 	while (stack_a)
 	{
