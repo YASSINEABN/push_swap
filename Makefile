@@ -2,7 +2,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
-SRC_actions = push_swap.c \
+SRC = push_swap.c \
 actions/applyactions.c actions/init_coords_stack_b.c actions/make_stack_a.c \
     actions/make_stack_b.c actions/push_a.c actions/push_b.c actions/revrot_stack.c \
     actions/rotate_stack_both.c actions/rotate_stack_large.c actions/rotate_stack.c \
