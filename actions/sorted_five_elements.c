@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 void	find_best_move_stack_a(l **stack_a, l **stack_b, int pos, int size)
 {
 	if (pos > size / 2)

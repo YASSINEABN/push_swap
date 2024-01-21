@@ -40,8 +40,8 @@
 int main(int argc, char const *argv[])
 {
     int i = 1;
-    int cmpt  = 0;
     int a = 0;
+    (void)argc;
     l *stack_a = malloc(sizeof(l));
     l *stack_b = malloc(sizeof(l));
     stack_b = NULL;
