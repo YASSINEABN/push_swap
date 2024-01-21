@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:18:52 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/20 18:55:13 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/21 09:57:33 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ typedef struct coords
 }coords;
 typedef struct coords_stack_a
 {
-    int pos_of_max;
-    int max; 
+        int max; 
     int st;
     int tmp;
     int m;
+    int	pos_of_max;
 }c_stacka;
 
 void    apply_actions(char *action ,l **stack_a, l **stack_b);
@@ -44,7 +44,7 @@ void push_a(l **stack_a, l **stack_b);
 void push_b(l **stack_a, l **stack_b);
 void rotate_stack_large(l **stack_a);
 int sorted_list(l* list);
-void sorted_list_three(l** list);
+void    sorted_list_three(l **list);
 void swap_stack(l** list );
 void check_min(l** list, int pos);
 void check_max(l** list, int pos);
@@ -66,14 +66,16 @@ void	check_coords(coords **coords, l **stack_a,int i);
 void	init_coords_stack_b(int i, coords **coords);
 void do_something(l **stack_a,l**stack_b,coords *coords, int *sorted_list );
 void make_stack_b(l **stack_a,l **stack_b ,int *sorted_list);
- void init_coords_stack_a(c_stacka **stack,l *stack_b);
+void	init_coords_stack_a(c_stacka **stack, l *stack_b, int *sorted_list);
  int last_node(l *stack_a);
  void first_push( l **stack_a , l **stack_b,int *sorted_list,c_stacka **stack);
 void	rotate_tmp(c_stacka **stack, l **stack_a, l **stack_b,int *sorted_list);
-void	push_max( c_stacka **stack , int *pos_of_max, l **stack_a, l **stack_b, int *sorted_list);
+void	push_max( c_stacka **stack , l **stack_a, l **stack_b, int *sorted_list);
 void	push_item(l **stack_a, l **stack_b,c_stacka **stack );
 void	init_svm( c_stacka **stack,l *stack_b,int *sorted_list);
 void make_stack_a(l **stack_a,l **stack_b, int *sorted_list);
+void five_sort(l **stack_a,l **stack_b);
+
 
 
 #endif

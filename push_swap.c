@@ -55,12 +55,14 @@ int main(int argc, char const *argv[])
         ft_list_new(&heada,a);
         i++;
     }
+    if(size(stack_a)==5)
+        five_sort(&stack_a,&stack_b);
 
 
-    int *sorted_list = sorted_array(stack_a);
-    make_stack_b(&stack_a,&
-    stack_b,sorted_list);
-    make_stack_a(&stack_a,&stack_b,sorted_list);
+    // int *sorted_list = sorted_array(stack_a);
+    // make_stack_b(&stack_a,&
+    // stack_b,sorted_list);
+    // make_stack_a(&stack_a,&stack_b,sorted_list);
     // printf("last node %d ", last_node(stack_a));
        
 
@@ -75,12 +77,12 @@ int main(int argc, char const *argv[])
 //         printf("%d\n",stack_b->value);
 //        stack_b = stack_b->next;
 //     }
-// printf("-----------------------------stacka------------------------ \n");
-//         while(stack_a)
-//             {
-//                 printf("%d\n",stack_a->value);
-//                 stack_a = stack_a->next;
-//             }
+printf("-----------------------------stacka------------------------ \n");
+        while(stack_a)
+            {
+                printf("%d\n",stack_a->value);
+                stack_a = stack_a->next;
+            }
      
         
   return 0;
