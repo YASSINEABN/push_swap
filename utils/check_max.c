@@ -9,7 +9,7 @@ void	check_max(l **list, int pos)
 	}
 	else if (pos == 1)
 	{
+		rotate_stack_large(list);
 		printf("rra \n");
-		revrot_stack(list);
 	}
 }

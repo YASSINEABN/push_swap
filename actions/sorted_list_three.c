@@ -1,13 +1,7 @@
 #include "../push_swap.h"
 void    sorted_list_three(l **list)
 				{
-					if(sorted_list(*list))
-					{
-						printf("THE LIST IS SORTED :) \n");
-						return ;
-					}
-					else
-					{
+	
 						l *node_min = min_list(*list);
 						l *node_max = max_list(*list);
 					
@@ -24,5 +18,4 @@ void    sorted_list_three(l **list)
 							check_min(list,pos_min);
 						}
 
-					}
 				}

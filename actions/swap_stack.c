@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:46 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/19 11:34:22 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:40:31 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ void	swap_stack(l **list)
 	val = (*list)->value;
 	(*list)->value = (*list)->next->value;
 	(*list)->next->value = val;
+		printf("sa \n");
 }

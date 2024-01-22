@@ -1,5 +1,5 @@
 
-CFLAGS = cc -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = cc -Wall -Wextra -Werror  
 NAME = push_swap
 SRC  = push_swap.c \
     actions/applyactions.c actions/init_coords_stack_b.c \
@@ -19,7 +19,10 @@ SRC  = push_swap.c \
     utils/min_list.c utils/pos.c \
     utils/pos_list.c utils/push_item.c \
     utils/push_max.c utils/size.c \
-    utils/sorted_array.c utils/sorted_list.c
+    utils/sorted_array.c utils/sorted_list.c \
+    utils/handles_error.c \
+    utils/init_stack_a.c utils/ft_split.c utils/ft_isdigit.c \
+    actions/sort_stacks.c
 
 
 OBJ = $(SRC:.c=.o)
