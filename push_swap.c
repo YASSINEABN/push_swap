@@ -40,23 +40,30 @@
 int main(int argc, char const *argv[])
 {
     int i = 1;
-    int a = 0;
-    (void)argc;
     l *stack_a = malloc(sizeof(l));
-    l *stack_b = malloc(sizeof(l));
+     l *stack_b = malloc(sizeof(l));
+     char **arg;
+     arg = (char **)argv;
+     stack_a = NULL;
     stack_b = NULL;
-    l *heada = stack_a;
-    
-    heada->value = atoi(argv[i]);
-    i++;
-    while(argv[i])
-    {
-        a = atoi(argv[i]);
-        ft_list_new(&heada,a);
-        i++;
-    }
-    if(size(stack_a)==5)
-        five_sort(&stack_a,&stack_b);
+    if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
+    else if (argc == 2) 
+		 arg = ft_split(argv[1], ' '); 
+
+        init_stack_a(&stack_a, arg + 1);
+
+        if (!sorted_list(stack_a)) 
+	{
+		// if (stack_len(a) == 2) //If not, and there are two numbers, swap the first two nodes
+		// 	sa(&a, false);
+		// else if (stack_len(a) == 3) //If not, and there are three numbers, call the sort three algorithm
+		// 	sort_three(&a);
+		// else
+			large_sort(&stack_a, &stack_b ,sorted_array(stack_a)); //If not, and there are more than three numbers, call the sort stacks algorithm
+	}
+    // if(size(stack_a)==5)
+    //     five_sort(&stack_a,&stack_b);
 
 
     // int *sorted_list = sorted_array(stack_a);
@@ -77,12 +84,12 @@ int main(int argc, char const *argv[])
 //         printf("%d\n",stack_b->value);
 //        stack_b = stack_b->next;
 //     }
-printf("-----------------------------stacka------------------------ \n");
-        while(stack_a)
-            {
-                printf("%d\n",stack_a->value);
-                stack_a = stack_a->next;
-            }
+// printf("-----------------------------stacka------------------------ \n");
+//         while(stack_a)
+//             {
+//                 printf("%d\n",stack_a->value);
+//                 stack_a = stack_a->next;
+//             }
      
         
   return 0;
