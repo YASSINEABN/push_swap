@@ -2,6 +2,8 @@
 
 int	sorted_list(l *list)
 {
+	if (!list)
+		return (1);
 	while (list->next)
 	{
 		if (list->value > list->next->value)
