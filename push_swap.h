@@ -82,6 +82,8 @@ int				error_duplicate(l *a, int n);
 void			free_stack(l **stack);
 void			free_errors(l **a);
 int	ft_isdigit(int c);
+void large_sort(l **stack_a,l **stack_b,int *sorted_list);
+
 
 
 

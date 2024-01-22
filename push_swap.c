@@ -60,7 +60,7 @@ int main(int argc, char const *argv[])
 		// else if (stack_len(a) == 3) //If not, and there are three numbers, call the sort three algorithm
 		// 	sort_three(&a);
 		// else
-			// sort_stacks(&a, &b); //If not, and there are more than three numbers, call the sort stacks algorithm
+			large_sort(&stack_a, &stack_b ,sorted_array(stack_a)); //If not, and there are more than three numbers, call the sort stacks algorithm
 	}
     // if(size(stack_a)==5)
     //     five_sort(&stack_a,&stack_b);
