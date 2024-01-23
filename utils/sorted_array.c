@@ -13,44 +13,41 @@
 #include "../push_swap.h"
 #include <stdlib.h>
 
+void ft_swap(int *i , int *j )
+{
+	int swap;
+	if (*i > *j)
+			{
+				swap = *i;
+				*i = *j;
+				*j = swap;
+			}
+}
 int	*sorted_array(l *list)
 {
-	int	T[2500];
+	int	*T;
 	int	i;
+	int j;
+	int k;
 
+	T = malloc(size(list) * sizeof(int));
 	i = 0;
 	while (list)
 	{
 		T[i++] = list->value;
 		list = list->next;
 	}
-	int j = i;
+	j = i;
 	i = 0;
-	int k;
-	int swap;
 	while (i < j)
 	{
 		k = i + 1;
 		while (k < j)
 		{
-			if (T[i] > T[k])
-			{
-				swap = T[i];
-				T[i] = T[k];
-				T[k] = swap;
-			}
+			ft_swap(&T[i],&T[k]);
 			k++;
 		}
 		i++;
 	}
-	int *sortedArray = (int *)malloc(j * sizeof(int));
-	i = 0;
-
-	while (i < j)
-	{
-		sortedArray[i] = T[i];
-		i++;
-	}
-
-	return (sortedArray);
+	return (T);
 }
