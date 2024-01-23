@@ -6,13 +6,14 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:10 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:55:35 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:52:54 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	first_push(l **stack_a, l **stack_b, int *sorted_list, c_stacka **stack)
+void	first_push(t_l **stack_a, t_l **stack_b, int *sorted_list,
+		t_cstacka **stack)
 {
 	int	st;
 

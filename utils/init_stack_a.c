@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:48:50 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:50:00 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:28:32 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ static long	ft_atol(const char *s)
 	return (result * sign);
 }
 
-static void	append_node(l **stack, int n)
+static void	append_node(t_l **stack, int n)
 {
-	l	*node;
-	l	*last_nodee;
+	t_l	*node;
+	t_l	*last_nodee;
 
 	if (!stack)
 		return ;
-	node = malloc(sizeof(l));
+	node = malloc(sizeof(t_l));
 	if (!node)
 		return ;
 	node->next = NULL;
@@ -70,7 +70,7 @@ static void	append_node(l **stack, int n)
 	}
 }
 
-void	init_stack_a(l **a, char **argv, int check)
+void	init_stack_a(t_l **a, char **argv, int check)
 {
 	long	n;
 	int		i;

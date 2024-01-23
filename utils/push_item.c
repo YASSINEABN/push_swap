@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:45 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:52:24 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:55:16 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	push_item(l **stack_a, l **stack_b, c_stacka **stack)
+void	push_item(t_l **stack_a, t_l **stack_b, t_cstacka **stack)
 {
 	int	val;
 

@@ -6,15 +6,15 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:27 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 13:56:12 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:26:48 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(l **stack_a, l **stack_b)
+void	pa(t_l **stack_a, t_l **stack_b)
 {
-	l	*temp;
+	t_l	*temp;
 
 	if (*stack_b == NULL)
 		return ;

@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:46 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 13:57:03 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:50:49 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(l **list)
+void	sa(t_l **list)
 {
 	int	val;
 

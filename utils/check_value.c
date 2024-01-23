@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:02 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:52:54 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:52:11 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	check_value(int *p, coords *coords, int a)
+int	check_value(int *p, t_coords *coords, int a)
 {
 	int	start;
 

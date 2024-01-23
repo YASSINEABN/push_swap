@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:07 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:44:08 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:52:38 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	find_best_move(l **stack_a, l **stack_b, int pos, int size)
+void	find_best_move(t_l **stack_a, t_l **stack_b, int pos, int size)
 {
 	if (pos > size / 2)
 	{

@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:43:54 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 17:14:30 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:51:49 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	check_list_value(l *stack_a, coords *coords, int *p)
+int	check_list_value(t_l *stack_a, t_coords *coords, int *p)
 {
 	while (stack_a)
 	{

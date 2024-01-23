@@ -6,17 +6,17 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:38 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:57:40 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:28:20 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <stdlib.h>
 
-l	*min_list(l *list)
+t_l	*min_list(t_l *list)
 {
 	int	min;
-	l	*node;
+	t_l	*node;
 
 	min = list->value;
 	while (list)
@@ -25,7 +25,7 @@ l	*min_list(l *list)
 			min = list->value;
 		list = list->next;
 	}
-	node = malloc(sizeof(l));
+	node = malloc(sizeof(t_l));
 	node->value = min;
 	node->next = NULL;
 	return (node);

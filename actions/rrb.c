@@ -6,16 +6,16 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:48:15 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 13:59:22 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:27:29 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrb(l **stack_a)
+void	rrb(t_l **stack_a)
 {
-	l	*last_node;
-	l	*first_node;
+	t_l	*last_node;
+	t_l	*first_node;
 
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;

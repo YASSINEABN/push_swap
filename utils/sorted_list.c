@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:55 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:54:46 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:56:09 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	sorted_list(l *list)
+int	sorted_list(t_l *list)
 {
 	if (!list)
 		return (1);

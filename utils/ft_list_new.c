@@ -6,19 +6,19 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:15 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:54:33 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:27:45 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_list_new(l **list, int a)
+void	ft_list_new(t_l **list, int a)
 {
-	l	*current;
-	l	*node;
+	t_l	*current;
+	t_l	*node;
 
 	current = *list;
-	node = malloc(sizeof(l));
+	node = malloc(sizeof(t_l));
 	node->value = a;
 	node->next = NULL;
 	while (current->next)

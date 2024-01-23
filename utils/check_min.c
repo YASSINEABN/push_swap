@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:43:59 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:44:00 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:52:06 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	check_min(l **list, int pos)
+void	check_min(t_l **list, int pos)
 {
 	if (pos == 1)
 		sa(list);

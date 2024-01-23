@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:43:51 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:58:35 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:51:38 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	check_lastnode(l *stack_a, int a)
+int	check_lastnode(t_l *stack_a, int a)
 {
 	while (stack_a->next)
 	{

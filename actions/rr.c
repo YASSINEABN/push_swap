@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:36 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:12:25 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:50:33 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rr(l **stack_a, l **stack_b)
+void	rr(t_l **stack_a, t_l **stack_b)
 {
 	ra(stack_a);
 	rb(stack_b);

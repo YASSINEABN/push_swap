@@ -6,17 +6,17 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:36 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:44:37 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:28:55 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <stdlib.h>
 
-l	*max_list(l *list)
+t_l	*max_list(t_l *list)
 {
 	int	max;
-	l	*node;
+	t_l	*node;
 
 	max = list->value;
 	while (list)
@@ -25,7 +25,7 @@ l	*max_list(l *list)
 			max = list->value;
 		list = list->next;
 	}
-	node = malloc(sizeof(l));
+	node = malloc(sizeof(t_l));
 	node->value = max;
 	node->next = NULL;
 	return (node);

@@ -6,17 +6,17 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:24:34 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 19:40:03 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:25:50 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	free_stacks(l **stack)
+void	free_stacks(t_l **stack)
 {
-	l	*tmp;
-	l	*current;
+	t_l	*tmp;
+	t_l	*current;
 
 	if (!stack)
 		return ;
@@ -31,7 +31,7 @@ void	free_stacks(l **stack)
 	*stack = NULL;
 }
 
-void	check_list(l **stack_a, l **stack_b, int size, int *sl)
+void	check_list(t_l **stack_a, t_l **stack_b, int size, int *sl)
 {
 	if (size == 2)
 		sa(stack_a);
@@ -43,7 +43,7 @@ void	check_list(l **stack_a, l **stack_b, int size, int *sl)
 		large_sort(stack_a, stack_b, sl);
 }
 
-void	init_stacks(l **stack_a, l **stack_b)
+void	init_stacks(t_l **stack_a, t_l **stack_b)
 {
 	*stack_a = NULL;
 	*stack_b = NULL;
@@ -51,8 +51,8 @@ void	init_stacks(l **stack_a, l **stack_b)
 
 int	main(int argc, char *argv[])
 {
-	l	*stack_a;
-	l	*stack_b;
+	t_l	*stack_a;
+	t_l	*stack_b;
 	int	*sl;
 
 	init_stacks(&stack_a, &stack_b);

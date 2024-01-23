@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:52 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 17:13:56 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:55:47 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_swap(int *i, int *j)
 	}
 }
 
-int	*sorted_array(l *list)
+int	*sorted_array(t_l *list)
 {
 	int	*tab;
 	int	i;

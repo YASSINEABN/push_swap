@@ -6,15 +6,15 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:09 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/20 15:12:58 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:49:28 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	make_stack_b(l **stack_a, l **stack_b, int *sorted_list)
+void	make_stack_b(t_l **stack_a, t_l **stack_b, int *sorted_list)
 {
-	coords	*coords;
+	t_coords	*coords;
 
 	init_coords_stack_b(size(*stack_a), &coords);
 	while (1)

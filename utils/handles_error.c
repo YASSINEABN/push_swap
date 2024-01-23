@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:58:53 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:58:54 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:24:25 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	error_syntax(char *str_n)
 	return (0);
 }
 
-int	error_duplicate(l *a, int n)
+int	error_duplicate(t_l *a, int n)
 {
 	if (!a)
 		return (0);
@@ -40,10 +40,10 @@ int	error_duplicate(l *a, int n)
 	return (0);
 }
 
-void	free_stack(l **stack)
+void	free_stack(t_l **stack)
 {
-	l	*tmp;
-	l	*current;
+	t_l	*tmp;
+	t_l	*current;
 
 	if (!stack)
 		return ;
@@ -58,7 +58,7 @@ void	free_stack(l **stack)
 	*stack = NULL;
 }
 
-void	free_errors(l **a)
+void	free_errors(t_l **a)
 {
 	free_stack(a);
 	printf("Error\n");

@@ -6,15 +6,15 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:34 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:58:15 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:23:38 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-l	*last_node(l *stack_a)
+t_l	*last_node(t_l *stack_a)
 {
-	l	*tmp;
+	t_l	*tmp;
 
 	tmp = stack_a;
 	while (tmp->next)

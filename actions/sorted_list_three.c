@@ -6,16 +6,16 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:40:59 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:42:23 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:51:21 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sorted_list_three(l **list)
+void	sorted_list_three(t_l **list)
 {
-	l	*node_min;
-	l	*node_max;
+	t_l	*node_min;
+	t_l	*node_max;
 	int	pos_max;
 	int	pos_min;
 
