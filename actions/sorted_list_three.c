@@ -17,5 +17,7 @@ void    sorted_list_three(l **list)
 							pos_min  = pos_list(node_min->value,*list);
 							check_min(list,pos_min);
 						}
+						free(node_max);
+						free(node_min);
 
 				}

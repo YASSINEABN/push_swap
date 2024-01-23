@@ -1,5 +1,5 @@
 
-CFLAGS = cc -Wall -Wextra -Werror  
+CFLAGS = gcc -Wall -Wextra -Werror  
 NAME = push_swap
 SRC  = push_swap.c \
     actions/applyactions.c actions/init_coords_stack_b.c \

@@ -1,10 +1,28 @@
 #include <stdio.h>
 #include "push_swap.h"
 
+void free_stacks(l **stack)
+{
+l	*tmp; //To store the next node in the stack before the current node is freed, because once a node is freed, you can't access its next pointer
+	l	*current;
+
+	if (!stack) //Check for an empty stack
+		return ;
+	current = *stack;
+	while (current) //As long as a node exist in the stack
+	{
+		tmp = current->next; //Assign to `tmp` the pointer to the next node
+		current->value = 0; //Assigning the node to `0` before freeing is not strictly necessary but it can help catch potential bugs such as memory-leaks and improve debugging
+		free(current); //Free the current node, deallocating the memory occupied by that node
+		current = tmp; //Assign `tmp` as the current first node
+	}
+	*stack = NULL;
+}
+
 int main(int argc, char const *argv[])
 {
-    l *stack_a = malloc(sizeof(l));
-     l *stack_b = malloc(sizeof(l));
+    l *stack_a;
+     l *stack_b;
      char **arg;
      arg = (char **)argv;
      stack_a = NULL;
@@ -29,6 +47,8 @@ int main(int argc, char const *argv[])
 		 else
 			large_sort(&stack_a, &stack_b ,sorted_array(stack_a)); 
 	}
+	
+	
    
 //    while(stack_b)
 //     {
@@ -41,7 +61,7 @@ int main(int argc, char const *argv[])
 //                 printf("%d\n",stack_a->value);
 //                 stack_a = stack_a->next;
 //             }
-    //  free_stacks(&stack_a,&stack_b);
+    free_stacks(&stack_a);
         
   return 0;
   }

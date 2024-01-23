@@ -14,13 +14,14 @@
 
 void	init_coords_stack_b(int i, coords **coords)
 {
+	*coords = malloc(sizeof(coords));
 	int	mid;
 
 	mid = (i / 2) - 1;
 	if (i > 100)
 		(*coords)->offset = i / 17;
 	else
-	(*coords)->offset = i / 6;
+		(*coords)->offset = i / 6;
 	(*coords)->start = mid - (*coords)->offset;
 	(*coords)->end = mid + (*coords)->offset;
 	(*coords)->midd = mid;

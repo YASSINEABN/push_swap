@@ -14,20 +14,20 @@
 
 	void	make_stack_b(l **stack_a, l **stack_b, int *sorted_list)
 	{
-		coords *coords = malloc(sizeof(coords));
+		coords *coords ;
 
 		init_coords_stack_b(size(*stack_a),&coords);
-		while (1)
-		{
-			if (check_value(sorted_list, coords, (*stack_a)->value))
-				do_something(stack_a, stack_b, coords, sorted_list);
-			else
-				apply_actions("ra", stack_a, stack_b);
-			 if (!check_list_value(*stack_a, coords, sorted_list))
-					check_coords(&coords, size(*stack_a) + size(*stack_b));
+		// while (1)
+		// {
+		// 	if (check_value(sorted_list, coords, (*stack_a)->value))
+		// 		do_something(stack_a, stack_b, coords, sorted_list);
+		// 	else
+		// 		apply_actions("ra", stack_a, stack_b);
+		// 	 if (!check_list_value(*stack_a, coords, sorted_list))
+		// 			check_coords(&coords, size(*stack_a) + size(*stack_b));
 		
-				if ((*stack_a) == NULL)
-					break ;
+		// 		if ((*stack_a) == NULL)
+		// 			break ;
 				
-		}
+		// }
 	}
