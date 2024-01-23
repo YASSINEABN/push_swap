@@ -75,7 +75,7 @@ void	init_svm( c_stacka **stack,int *sorted_list);
 void make_stack_a(l **stack_a,l **stack_b, int *sorted_list);
 void five_sort(l **stack_a,l **stack_b);
 char	**ft_split(char const *s, char c);
-void	init_stack_a(l **a, char **argv);
+void	init_stack_a(l **a, char **argv , int check);
 int				error_syntax(char *str_n); 
 int				error_duplicate(l *a, int n);
 void			free_stack(l **stack);
