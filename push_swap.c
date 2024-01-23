@@ -31,6 +31,11 @@ void	free_stacks(l **stack)
 	*stack = NULL;
 }
 
+void init_stacks(l **stack_a,l **stack_b)
+{
+	*stack_a = NULL;
+	*stack_b = NULL;
+}
 int	main(int argc, char const *argv[])
 {
 	l		*stack_a;
@@ -39,14 +44,14 @@ int	main(int argc, char const *argv[])
 	int		*sl;
 
 	arg = (char **)argv;
-	stack_a = NULL;
-	stack_b = NULL;
+	init_stacks(&stack_a,&stack_b);
 	arg++;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
 		arg = ft_split(argv[1], ' ');
 	init_stack_a(&stack_a, arg);
+	free(arg);
 	sl = sorted_array(stack_a);
 	if (!sorted_list(stack_a))
 	{

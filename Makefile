@@ -1,5 +1,5 @@
 
-CFLAGS = cc  -Wall -Werror -Wextra -fsanitize=address
+CFLAGS = gcc  -Wall -Werror -Wextra -fsanitize=address
 NAME = push_swap
 SRC  = push_swap.c \
     actions/applyactions.c actions/init_coords_stack_b.c \
