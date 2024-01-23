@@ -13,17 +13,17 @@
 #include "../push_swap.h"
 #include <limits.h>
 
-void ft_free(char **argv)
+void	ft_free(char **argv)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (NULL == argv || NULL == *argv)
-        return;
-    while (argv[i])
-        free(argv[i++]);
-    free(argv);
-    argv = NULL; 
+	i = 0;
+	if (NULL == argv || NULL == *argv)
+		return ;
+	while (argv[i])
+		free(argv[i++]);
+	free(argv);
+	argv = NULL;
 }
 
 static long	ft_atol(const char *s)
@@ -70,7 +70,7 @@ static void	append_node(l **stack, int n)
 	}
 }
 
-void	init_stack_a(l **a, char **argv , int check)
+void	init_stack_a(l **a, char **argv, int check)
 {
 	long	n;
 	int		i;
@@ -88,6 +88,6 @@ void	init_stack_a(l **a, char **argv , int check)
 		append_node(a, (int)n);
 		i++;
 	}
-	if(check == 1)
+	if (check == 1)
 		ft_free(argv);
 }
