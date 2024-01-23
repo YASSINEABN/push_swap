@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:15 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:44:16 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:54:33 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	ft_list_new(l **list, int a)
 {
-	l *current;
+	l	*current;
+	l	*node;
+
 	current = *list;
-	l *node = malloc(sizeof(l));
+	node = malloc(sizeof(l));
 	node->value = a;
 	node->next = NULL;
 	while (current->next)

@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:43 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:44:44 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:53:28 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	pos(l *stack_a, int value)
 {
-	int pos = 1;
+	int	pos;
+
+	pos = 1;
 	while (stack_a)
 	{
 		if (stack_a->value == value)

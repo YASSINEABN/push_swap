@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:34 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:44:35 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:58:15 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 l	*last_node(l *stack_a)
 {
-	l *tmp = stack_a;
+	l	*tmp;
+
+	tmp = stack_a;
 	while (tmp->next)
 	{
 		tmp = tmp->next;

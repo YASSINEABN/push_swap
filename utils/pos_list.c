@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:41 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:45:57 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:47:42 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	pos_list(int max, l *list)
 {
-	int	pos
-	
+	int	pos;
+
 	pos = 0;
 	while (list)
 	{

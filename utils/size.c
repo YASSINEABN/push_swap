@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:50 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:44:51 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:56:18 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	size(l *list)
 {
-	int count = 0;
+	int	count;
+
+	count = 0;
 	while (list)
 	{
 		count++;
