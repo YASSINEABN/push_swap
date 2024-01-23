@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:43:54 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 15:48:02 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:14:30 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	check_list_value(l *stack_a, coords *coords, int *p)
 {
-
 	while (stack_a)
 	{
 		if (check_value(p, coords, stack_a->value))

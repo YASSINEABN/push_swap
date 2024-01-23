@@ -6,35 +6,37 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:44:52 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:46:44 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:13:56 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <stdlib.h>
 
-void ft_swap(int *i , int *j )
+void	ft_swap(int *i, int *j)
 {
-	int swap;
+	int	swap;
+
 	if (*i > *j)
-			{
-				swap = *i;
-				*i = *j;
-				*j = swap;
-			}
+	{
+		swap = *i;
+		*i = *j;
+		*j = swap;
+	}
 }
+
 int	*sorted_array(l *list)
 {
-	int	*T;
+	int	*tab;
 	int	i;
-	int j;
-	int k;
+	int	j;
+	int	k;
 
-	T = malloc(size(list) * sizeof(int));
+	tab = malloc(size(list) * sizeof(int));
 	i = 0;
 	while (list)
 	{
-		T[i++] = list->value;
+		tab[i++] = list->value;
 		list = list->next;
 	}
 	j = i;
@@ -44,10 +46,10 @@ int	*sorted_array(l *list)
 		k = i + 1;
 		while (k < j)
 		{
-			ft_swap(&T[i],&T[k]);
+			ft_swap(&tab[i], &tab[k]);
 			k++;
 		}
 		i++;
 	}
-	return (T);
+	return (tab);
 }
