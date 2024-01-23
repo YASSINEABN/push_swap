@@ -6,24 +6,23 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:03 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/21 09:37:34 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:24:10 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_coords_stack_b(int i, coords **coords)
+void	init_coords_stack_b(int i, coords **coord)
 {
-	*coords = malloc(sizeof(coords));
 	int	mid;
 
+	*coord = malloc(sizeof(struct coords));
 	mid = (i / 2) - 1;
 	if (i > 100)
-		(*coords)->offset = i / 17;
+		(*coord)->offset = i / 17;
 	else
-		(*coords)->offset = i / 6;
-	(*coords)->start = mid - (*coords)->offset;
-	(*coords)->end = mid + (*coords)->offset;
-	(*coords)->midd = mid;
-
+		(*coord)->offset = i / 6;
+	(*coord)->start = mid - (*coord)->offset;
+	(*coord)->end = mid + (*coord)->offset;
+	(*coord)->midd = mid;
 }

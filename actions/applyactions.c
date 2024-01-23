@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:00 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/19 21:42:35 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:43:26 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,25 @@
 void	apply_actions(char *action, l **stack_a, l **stack_b)
 {
 	if (!strcmp(action, "pb"))
-		push_b(stack_a, stack_b);
+		pb(stack_a, stack_b);
 	if (!strcmp(action, "pa"))
-		push_a(stack_a, stack_b);
+		pa(stack_a, stack_b);
 	if (!strcmp(action, "ra"))
 	{
-		printf("ra \n");
-		rotate_stack(stack_a);
+		printf("ra\n");
+		ra(stack_a);
 	}
 	if (!strcmp(action, "rb"))
 	{
-		printf("rb \n");
-		rotate_stack(stack_b);
+		printf("rb\n");
+		rb(stack_b);
 	}
 	if (!strcmp(action, "rrb"))
-	{
-		printf("rrb \n");
-		rotate_stack_large(stack_b);
-	}
+		rrb(stack_b);
 	if (!strcmp(action, "rra"))
-	{
-		printf("rra \n");
-		rotate_stack_large(stack_a);
-	}
+		rra(stack_a);
 	if (!strcmp(action, "rr"))
-		rotate_stack_both(stack_a, stack_b);
+		rr(stack_a, stack_b);
+	if (!strcmp(action, "sa"))
+		sa(stack_a);
 }

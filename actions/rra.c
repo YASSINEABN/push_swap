@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_tmp.c                                       :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/19 11:19:43 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 14:43:20 by yaboulan         ###   ########.fr       */
+/*   Created: 2024/01/19 11:48:15 by yaboulan          #+#    #+#             */
+/*   Updated: 2024/01/23 13:59:08 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rotate_tmp(c_stacka **stack, l **stack_a, l **stack_b, int *sorted_list)
+void	rra(l **stack_a)
 {
-	(*stack)->m = 0;
-	apply_actions("rra", stack_a, stack_b);
-	--(*stack)->st;
-	(*stack)->max = sorted_list[(*stack)->st];
+	l	*last_node;
+	l	*first_node;
+
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	last_node = *stack_a;
+	while (last_node->next->next)
+		last_node = last_node->next;
+	first_node = last_node->next;
+	last_node->next = NULL;
+	first_node->next = *stack_a;
+	*stack_a = first_node;
+	printf("rra\n");
 }

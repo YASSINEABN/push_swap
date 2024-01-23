@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:18:52 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/21 11:11:26 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:03:13 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,21 @@ typedef struct coords_stack_a
 }c_stacka;
 
 void    apply_actions(char *action ,l **stack_a, l **stack_b);
-void push_a(l **stack_a, l **stack_b);
-void push_b(l **stack_a, l **stack_b);
-void rotate_stack_large(l **stack_a);
+void	pa(l **stack_a, l **stack_b);
+void pb(l **stack_a, l **stack_b);
 int sorted_list(l* list);
 void    sorted_list_three(l **list);
-void swap_stack(l** list );
+void sa(l** list );
 void check_min(l** list, int pos);
 void check_max(l** list, int pos);
 l*	last_node(l *stack_a);
 l* min_list(l* list);
 int pos_list(int max, l* list);
 l* max_list(l* list);
-void rotate_stack(l** list );
-void revrot_stack(l** list);
+void ra(l** list );
+void rb(l** list );
 int *sorted_array(l *list);
-void rotate_stack_both(l **stack_a , l **satck_b);
+void	rr(l **stack_a, l **stack_b);
 void ft_list_new(l **list , int a);
 int check_lastnode(l *stack_a , int a);
 int	check_value(int *p, coords *coords, int a);
@@ -83,6 +82,10 @@ void			free_stack(l **stack);
 void			free_errors(l **a);
 int	ft_isdigit(int c);
 void large_sort(l **stack_a,l **stack_b,int *sorted_list);
+void	rra(l **stack_a);
+void	rrb(l **stack_a);
+
+
 
 
 

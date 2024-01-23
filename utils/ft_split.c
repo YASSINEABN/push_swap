@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/23 14:44:17 by yaboulan          #+#    #+#             */
+/*   Updated: 2024/01/23 14:44:18 by yaboulan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "../push_swap.h" 
+#include "../push_swap.h"
 
 static int	num_words(char const *s, char c)
 {
@@ -78,7 +89,7 @@ static char	**fill_array(char **tab, char const *s, char c, int i)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**tab;
+	char **tab;
 
 	if (!s)
 		return (NULL);

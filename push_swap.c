@@ -3,7 +3,7 @@
 
 void free_stacks(l **stack)
 {
-l	*tmp; //To store the next node in the stack before the current node is freed, because once a node is freed, you can't access its next pointer
+l	*tmp; 
 	l	*current;
 
 	if (!stack) //Check for an empty stack
@@ -35,17 +35,17 @@ int main(int argc, char const *argv[])
 		 arg = ft_split(argv[1], ' '); 
 
         init_stack_a(&stack_a, arg);
-
+	int *sl = sorted_array(stack_a);
         if (!sorted_list(stack_a)) 
 	{
 		if (size(stack_a) == 2) 
-			swap_stack(&stack_a);
+			sa(&stack_a);
         else if(size(stack_a) == 3)
             sorted_list_three(&stack_a);
         else if (size(stack_a) == 5)
             five_sort(&stack_a,&stack_b);
 		 else
-			large_sort(&stack_a, &stack_b ,sorted_array(stack_a)); 
+			large_sort(&stack_a, &stack_b ,sl); 
 	}
 	
 	
@@ -55,13 +55,14 @@ int main(int argc, char const *argv[])
 //         printf("%d\n",stack_b->value);
 //        stack_b = stack_b->next;
 //     }
-// printf("-----------------------------stacka------------------------ \n");
-//         while(stack_a)
-//             {
-//                 printf("%d\n",stack_a->value);
-//                 stack_a = stack_a->next;
-//             }
+	// printf("-----------------------------stacka------------------------ \n");
+	// 		while(stack_a)
+	// 			{
+	// 				printf("%d\n",stack_a->value);
+	// 				stack_a = stack_a->next;
+	// 			}
     free_stacks(&stack_a);
+	free(sl);
         
   return 0;
   }

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   revrot_stack.c                                     :+:      :+:    :+:   */
+/*   ra.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/19 11:19:33 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/19 21:14:24 by yaboulan         ###   ########.fr       */
+/*   Created: 2024/01/19 11:19:41 by yaboulan          #+#    #+#             */
+/*   Updated: 2024/01/23 14:25:08 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	revrot_stack(l **list)
+void	ra(l **list)
 {
-	swap_stack(list);
-	rotate_stack(list);
-	swap_stack(list);
+	l	*current;
+	int	first_value;
+
+	current = (*list);
+	first_value = current->value;
+	while ((*list)->next)
+	{
+		(*list)->value = (*list)->next->value;
+		(*list) = (*list)->next;
+	}
+	(*list)->value = first_value;
+	(*list) = current;
 }

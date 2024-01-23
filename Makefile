@@ -1,12 +1,9 @@
 
-CFLAGS = gcc -Wall -Wextra -Werror  
+CFLAGS = cc  -fsanitize=address
 NAME = push_swap
 SRC  = push_swap.c \
     actions/applyactions.c actions/init_coords_stack_b.c \
     actions/make_stack_a.c actions/make_stack_b.c \
-    actions/push_a.c actions/push_b.c \
-    actions/revrot_stack.c actions/rotate_stack_both.c \
-    actions/rotate_stack.c actions/rotate_stack_large.c \
     actions/rotate_tmp.c actions/sorted_five_elements.c \
     actions/sorted_list_three.c actions/swap_stack.c \
     utils/check_coords.c utils/check_last_node.c \

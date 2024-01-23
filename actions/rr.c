@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_stack.c                                       :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/19 11:19:46 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/22 17:40:31 by yaboulan         ###   ########.fr       */
+/*   Created: 2024/01/19 11:19:36 by yaboulan          #+#    #+#             */
+/*   Updated: 2024/01/23 14:12:25 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap_stack(l **list)
+void	rr(l **stack_a, l **stack_b)
 {
-	int	val;
-
-	val = (*list)->value;
-	(*list)->value = (*list)->next->value;
-	(*list)->next->value = val;
-		printf("sa \n");
+	ra(stack_a);
+	rb(stack_b);
+	printf("rr\n");
 }
