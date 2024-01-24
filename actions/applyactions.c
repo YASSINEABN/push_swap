@@ -11,30 +11,29 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include "string.h"
 
 void	apply_actions(char *action, t_l **stack_a, t_l **stack_b)
 {
-	if (!strcmp(action, "pb"))
+	if (!ft_strcmp(action, "pb"))
 		pb(stack_a, stack_b);
-	if (!strcmp(action, "pa"))
+	if (!ft_strcmp(action, "pa"))
 		pa(stack_a, stack_b);
-	if (!strcmp(action, "ra"))
+	if (!ft_strcmp(action, "ra"))
 	{
-		printf("ra\n");
+		write(1,"ra\n",3);
 		ra(stack_a);
 	}
-	if (!strcmp(action, "rb"))
+	if (!ft_strcmp(action, "rb"))
 	{
-		printf("rb\n");
+		write(1,"rb\n",3);
 		rb(stack_b);
 	}
-	if (!strcmp(action, "rrb"))
+	if (!ft_strcmp(action, "rrb"))
 		rrb(stack_b);
-	if (!strcmp(action, "rra"))
+	if (!ft_strcmp(action, "rra"))
 		rra(stack_a);
-	if (!strcmp(action, "rr"))
+	if (!ft_strcmp(action, "rr"))
 		rr(stack_a, stack_b);
-	if (!strcmp(action, "sa"))
+	if (!ft_strcmp(action, "sa"))
 		sa(stack_a);
 }

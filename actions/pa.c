@@ -22,5 +22,5 @@ void	pa(t_l **stack_a, t_l **stack_b)
 	*stack_b = (*stack_b)->next;
 	temp->next = *stack_a;
 	*stack_a = temp;
-	printf("pa\n");
+	write(1,"pa\n",3);
 }

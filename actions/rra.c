@@ -26,5 +26,5 @@ void	rra(t_l **stack_a)
 	last_node->next = NULL;
 	first_node->next = *stack_a;
 	*stack_a = first_node;
-	printf("rra\n");
+	write(1,"rra\n",4);
 }

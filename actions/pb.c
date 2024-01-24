@@ -22,5 +22,5 @@ void	pb(t_l **stack_a, t_l **stack_b)
 	*stack_a = (*stack_a)->next;
 	temp->next = *stack_b;
 	*stack_b = temp;
-	printf("pb\n");
+	write(1,"pb\n",3);
 }

@@ -16,5 +16,5 @@ void	rr(t_l **stack_a, t_l **stack_b)
 {
 	ra(stack_a);
 	rb(stack_b);
-	printf("rr\n");
+	write(1,"rr\n",3);
 }

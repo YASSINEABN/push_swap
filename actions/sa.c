@@ -19,5 +19,5 @@ void	sa(t_l **list)
 	val = (*list)->value;
 	(*list)->value = (*list)->next->value;
 	(*list)->next->value = val;
-	printf("sa\n");
+	write(1,"sa\n",3);
 }

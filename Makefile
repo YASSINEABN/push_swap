@@ -22,7 +22,7 @@ SRC = push_swap.c \
     utils/sorted_array.c utils/sorted_list.c \
     utils/handles_error.c \
     utils/init_stack_a.c utils/ft_split.c utils/ft_isdigit.c \
-    actions/sort_stacks.c actions/rr.c
+    actions/sort_stacks.c actions/rr.c utils/ft_strcmp.c
 
 OBJ = $(SRC:.c=.o)
 

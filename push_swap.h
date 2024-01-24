@@ -89,6 +89,6 @@ int				ft_isdigit(int c);
 void			large_sort(t_l **stack_a, t_l **stack_b, int *sorted_list);
 void			rra(t_l **stack_a);
 void			rrb(t_l **stack_a);
- int	ft_strcmp(char *str_1, char *str_2)
+ int	ft_strcmp(char *str_1, char *str_2);
 
 #endif
