@@ -31,19 +31,17 @@ void	find_best_move_stack_a(t_l **stack_a, t_l **stack_b, int pos, int size)
 
 void	five_sort(t_l **stack_a, t_l **stack_b)
 {
-	t_l	*max;
+	t_l	*min;
 
-	max = max_list(*stack_a);
-	find_best_move_stack_a(stack_a, stack_b, pos(*stack_a, max->value),
+	min = min_list(*stack_a);
+	find_best_move_stack_a(stack_a, stack_b, pos(*stack_a, min->value),
 		size(*stack_a));
-	free(max);
-	max = max_list(*stack_a);
-	find_best_move_stack_a(stack_a, stack_b, pos(*stack_a, max->value),
+	free(min);
+	min = min_list(*stack_a);
+	find_best_move_stack_a(stack_a, stack_b, pos(*stack_a, min->value),
 		size(*stack_a));
 	sorted_list_three(stack_a);
 	pa(stack_a, stack_b);
-	apply_actions("ra", stack_a, stack_b);
 	pa(stack_a, stack_b);
-	apply_actions("ra", stack_a, stack_b);
-	free(max);
+	free(min);
 }
