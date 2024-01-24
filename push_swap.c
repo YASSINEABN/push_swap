@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:24:34 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 21:25:50 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:58:02 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	free_stacks(t_l **stack)
 void	check_list(t_l **stack_a, t_l **stack_b, int size, int *sl)
 {
 	if (size == 2)
-		sa(stack_a);
+		sa(stack_a, 0);
 	else if (size == 3)
 		sorted_list_three(stack_a);
 	else if (size == 5)

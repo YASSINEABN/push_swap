@@ -6,13 +6,13 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:48:15 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 21:27:22 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:49:57 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rra(t_l **stack_a)
+void	rra(t_l **stack_a, int checker)
 {
 	t_l	*last_node;
 	t_l	*first_node;
@@ -26,5 +26,6 @@ void	rra(t_l **stack_a)
 	last_node->next = NULL;
 	first_node->next = *stack_a;
 	*stack_a = first_node;
-	write(1,"rra\n",4);
+	if (!checker)
+		write(1, "rra\n", 4);
 }

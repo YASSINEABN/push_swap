@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:43:59 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 19:52:06 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:53:10 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	check_min(t_l **list, int pos)
 {
 	if (pos == 1)
-		sa(list);
+		sa(list, 0);
 }

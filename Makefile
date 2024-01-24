@@ -23,6 +23,7 @@ SRC = push_swap.c \
     utils/handles_error.c \
     utils/init_stack_a.c utils/ft_split.c utils/ft_isdigit.c \
     actions/sort_stacks.c actions/rr.c utils/ft_strcmp.c
+NAMES = checker
 
 OBJ = $(SRC:.c=.o)
 
@@ -32,6 +33,9 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 	ar rc $(NAME2) $(OBJ)
 
+bonus:$(NAMES)
+
+$(NAMES)
 clean:
 	rm -f $(OBJ)
 

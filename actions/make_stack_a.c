@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:06 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 19:49:10 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:56:06 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void	make_stack_a(t_l **stack_a, t_l **stack_b, int *sorted_list)
 			push_max(&coords, stack_a, stack_b, sorted_list);
 	}
 	if (check_lastnode(*stack_a, (*stack_a)->value))
-		rra(stack_a);
+		rra(stack_a, 0);
 	free(coords);
 }

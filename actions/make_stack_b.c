@@ -17,7 +17,7 @@ void	make_stack_b(t_l **stack_a, t_l **stack_b, int *sorted_list)
 	t_coords	*coords;
 
 	init_coords_stack_b(size(*stack_a), &coords);
-	if(size(*stack_a)==4)
+	if (size(*stack_a) == 4)
 		coords->offset = 4;
 	while (1)
 	{
