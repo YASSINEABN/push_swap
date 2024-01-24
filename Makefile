@@ -1,7 +1,8 @@
-
-CFLAGS = cc  -Wall -Werror -Wextra -fsanitize=address
+CC = cc
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address
 NAME = push_swap
-SRC  = push_swap.c \
+NAME2 = push_swap.a
+SRC = push_swap.c \
     actions/applyactions.c actions/init_coords_stack_b.c \
     actions/make_stack_a.c actions/make_stack_b.c \
     actions/rotate_tmp.c actions/sorted_five_elements.c \
@@ -21,20 +22,20 @@ SRC  = push_swap.c \
     utils/sorted_array.c utils/sorted_list.c \
     utils/handles_error.c \
     utils/init_stack_a.c utils/ft_split.c utils/ft_isdigit.c \
-    actions/sort_stacks.c actions/rr.c \
-
+    actions/sort_stacks.c actions/rr.c
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): 
-	$(CFLAGS) -o $(NAME)  $(SRC) 
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	ar rc $(NAME2) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME2)
 
 re: fclean all
