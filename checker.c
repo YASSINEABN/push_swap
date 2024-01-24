@@ -23,6 +23,12 @@ void	free_stacks(t_l **stack)
 	}
 	*stack = NULL;
 }
+
+
+// void execute(t_l **stack_a , t_l **stack_b , char *line)
+// {
+//     if(!strcmp)
+
 void execute(t_l ** stack_a , t_l **stack_b, char *line)
 {
     if(!strcmp(line , "ra\n"))
@@ -54,13 +60,17 @@ void execute(t_l ** stack_a , t_l **stack_b, char *line)
         sb(stack_b,1);
     }
 
+
+
+// }
+
 }
 
+ 
 int	main(int argc, char *argv[])
 {
 	t_l	*stack_a;
 	t_l	*stack_b;
-	int	*sl;
     char *line;
 
 	init_stacks(&stack_a, &stack_b);
@@ -72,12 +82,10 @@ int	main(int argc, char *argv[])
 		init_stack_a(&stack_a, argv + 1, 0);
 
     while ((line = get_next_line(0)))
-       execute(&stack_a,&stack_b,line);
-        if(sorted_list(stack_a) && !*stack_b)
-            printf("OK\n");
-        else
-            printf("ERROR\n");
-        
+    {
+        execute(&stack_a,&stack_b,line);
+    }
+    
 		
 	free_stacks(&stack_a);
 

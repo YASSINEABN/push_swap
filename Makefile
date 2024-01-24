@@ -23,7 +23,9 @@ SRC = push_swap.c \
     utils/handles_error.c \
     utils/init_stack_a.c utils/ft_split.c utils/ft_isdigit.c \
     actions/sort_stacks.c actions/rr.c utils/ft_strcmp.c
-NAMES = checker
+BONUS = checker
+BONUS_SRCS = checker.c get_next_line/get_next_line.c
+BOBJS = $(BONUS_SRCS:.c=.o)
 
 OBJ = $(SRC:.c=.o)
 
@@ -33,13 +35,15 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 	ar rc $(NAME2) $(OBJ)
 
-bonus:$(NAMES)
+bonus: $(BONUS)
 
-$(NAMES)
+$(BONUS): $(BOBJS)
+	$(CC) $(CFLAGS) -o $(BONUS) $(BOBJS)
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BOBJS)
 
 fclean: clean
-	rm -f $(NAME) $(NAME2)
+	rm -f $(NAME) $(NAME2) $(BONUS)
 
 re: fclean all
