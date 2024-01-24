@@ -22,9 +22,10 @@ SRC = push_swap.c \
     utils/sorted_array.c utils/sorted_list.c \
     utils/handles_error.c \
     utils/init_stack_a.c utils/ft_split.c utils/ft_isdigit.c \
-    actions/sort_stacks.c actions/rr.c utils/ft_strcmp.c
+    actions/sort_stacks.c actions/rr.c utils/ft_strcmp.c actions/sb.c \
+
 BONUS = checker
-BONUS_SRCS = checker.c get_next_line/get_next_line.c
+BONUS_SRCS = bonus/checker.c bonus/get_next_line/get_next_line.c bonus/get_next_line/get_next_line_utils.c
 BOBJS = $(BONUS_SRCS:.c=.o)
 
 OBJ = $(SRC:.c=.o)
@@ -38,7 +39,7 @@ $(NAME): $(OBJ)
 bonus: $(BONUS)
 
 $(BONUS): $(BOBJS)
-	$(CC) $(CFLAGS) -o $(BONUS) $(BOBJS)
+	$(CC) $(CFLAGS) -o $(BONUS) $(BOBJS) push_swap.a
 
 clean:
 	rm -f $(OBJ) $(BOBJS)

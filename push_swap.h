@@ -40,11 +40,11 @@ typedef struct coords_stack_a
 }				t_cstacka;
 
 void			apply_actions(char *action, t_l **stack_a, t_l **stack_b);
-void			pa(t_l **stack_a, t_l **stack_b,int checker);
-void			pb(t_l **stack_a, t_l **stack_b,int checker);
+void			pa(t_l **stack_a, t_l **stack_b, int checker);
+void			pb(t_l **stack_a, t_l **stack_b, int checker);
 int				sorted_list(t_l *list);
 void			sorted_list_three(t_l **list);
-void			sa(t_l **list,int checker);
+void			sa(t_l **list, int checker);
 void			check_min(t_l **list, int pos);
 void			check_max(t_l **list, int pos);
 t_l				*last_node(t_l *stack_a);
@@ -54,7 +54,7 @@ t_l				*max_list(t_l *list);
 void			ra(t_l **list);
 void			rb(t_l **list);
 int				*sorted_array(t_l *list);
-void			rr(t_l **stack_a, t_l **stack_b ,int checker);
+void			rr(t_l **stack_a, t_l **stack_b, int checker);
 void			ft_list_new(t_l **list, int a);
 int				check_lastnode(t_l *stack_a, int a);
 int				check_value(int *p, t_coords *coords, int a);
@@ -87,12 +87,10 @@ void			free_stack(t_l **stack);
 void			free_errors(t_l **a);
 int				ft_isdigit(int c);
 void			large_sort(t_l **stack_a, t_l **stack_b, int *sorted_list);
-void			rra(t_l **stack_a,int checker);
-void			rrb(t_l **stack_a,int checker);
- int	ft_strcmp(char *str_1, char *str_2);
- char	*get_next_line(int fd);
- void	sb(t_l **list , int checker);
-
-
+void			rra(t_l **stack_a, int checker);
+void			rrb(t_l **stack_a, int checker);
+int				ft_strcmp(char *str_1, char *str_2);
+char			*get_next_line(int fd);
+void			sb(t_l **list, int checker);
 
 #endif
