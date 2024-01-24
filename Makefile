@@ -25,7 +25,9 @@ SRC = push_swap.c \
     actions/sort_stacks.c actions/rr.c utils/ft_strcmp.c actions/sb.c \
 
 BONUS = checker
-BONUS_SRCS = bonus/checker.c bonus/get_next_line/get_next_line.c bonus/get_next_line/get_next_line_utils.c
+BONUS_SRCS = bonus/checker.c bonus/get_next_line/get_next_line.c \
+            bonus/get_next_line/get_next_line_utils.c bonus/bonus_utils.c \
+
 BOBJS = $(BONUS_SRCS:.c=.o)
 
 OBJ = $(SRC:.c=.o)

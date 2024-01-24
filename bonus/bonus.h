@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   bonus.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/19 11:19:46 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/24 15:52:39 by yaboulan         ###   ########.fr       */
+/*   Created: 2024/01/24 16:36:35 by yaboulan          #+#    #+#             */
+/*   Updated: 2024/01/24 16:45:02 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#ifndef BONUS_H
+# define BONUS_H
 
-void	sb(t_l **list, int checker)
-{
-	int	val;
+# include "../push_swap.h"
 
-	if (!(*list))
-		return ;
-	val = (*list)->value;
-	(*list)->value = (*list)->next->value;
-	(*list)->next->value = val;
-	if (!checker)
-		write(1, "sb\n", 3);
-}
+void	process_line(t_l **stack_a, t_l **stack_b, char **line, int *check);
+void	check_error(int check, t_l *stack_a, t_l *stack_b);
+int		check_command(char *line, int *check);
+void	execute(t_l **stack_a, t_l **stack_b, char *line);
+void	execute2(t_l **stack_a, t_l **stack_b, char *line);
+
+#endif

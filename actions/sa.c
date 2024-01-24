@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:46 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/24 11:50:25 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:51:06 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	sa(t_l **list, int checker)
 {
 	int	val;
 
+	if (!*(list) && !(*list)->next)
+		return ;
 	val = (*list)->value;
 	(*list)->value = (*list)->next->value;
 	(*list)->next->value = val;

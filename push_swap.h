@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:18:52 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/24 11:57:39 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:29:35 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,9 @@ void			rrb(t_l **stack_a, int checker);
 int				ft_strcmp(char *str_1, char *str_2);
 char			*get_next_line(int fd);
 void			sb(t_l **list, int checker);
+void			process_line(t_l **stack_a, t_l **stack_b, char **line,
+					int *check);
+void			check_error(int check, t_l *stack_a, t_l *stack_b);
+int				check_command(char *line, int *check);
 
 #endif
