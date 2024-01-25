@@ -70,24 +70,32 @@ static void	append_node(t_l **stack, int n)
 	}
 }
 
-void	init_stack_a(t_l **a, char **argv, int check)
+void	init_stack_a(t_l **a, char **argv,int ac)
 {
 	long	n;
 	int		i;
 
 	i = 0;
-	while (argv[i])
+	char **h;
+	int k;
+	k = 0;
+	while( i < ac - 1)
 	{
-		if (error_syntax(argv[i]))
+		h = ft_split(argv[i], ' ');
+		k = 0;
+		while(h[k])
+		{
+			if (error_syntax(h[k]))
 			free_errors(a);
-		n = ft_atol(argv[i]);
+	 	n = ft_atol(h[k]);
 		if (n > INT_MAX || n < INT_MIN)
-			free_errors(a);
+	 		free_errors(a);
 		if (error_duplicate(*a, (int)n))
 			free_errors(a);
 		append_node(a, (int)n);
+		k++;
+		}
+		ft_free(h);
 		i++;
 	}
-	if (check == 1)
-		ft_free(argv);
 }

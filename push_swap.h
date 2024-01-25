@@ -80,7 +80,7 @@ void			init_svm(t_cstacka **stack, int *sorted_list);
 void			make_stack_a(t_l **stack_a, t_l **stack_b, int *sorted_list);
 void			five_sort(t_l **stack_a, t_l **stack_b);
 char			**ft_split(char const *s, char c);
-void			init_stack_a(t_l **a, char **argv, int check);
+void	init_stack_a(t_l **a, char **argv,int ac);
 int				error_syntax(char *str_n);
 int				error_duplicate(t_l *a, int n);
 void			free_stack(t_l **stack);
