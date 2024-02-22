@@ -6,12 +6,11 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:24:34 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/24 15:58:42 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/02/14 20:11:58 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	free_stacks(t_l **stack)
 {
@@ -37,6 +36,8 @@ void	check_list(t_l **stack_a, t_l **stack_b, int size, int *sl)
 		sa(stack_a, 0);
 	else if (size == 3)
 		sorted_list_three(stack_a);
+	else if (size == 4)
+		four_sort(stack_a, stack_b);
 	else if (size == 5)
 		five_sort(stack_a, stack_b);
 	else
@@ -56,10 +57,10 @@ int	main(int argc, char *argv[])
 	int	*sl;
 
 	init_stacks(&stack_a, &stack_b);
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	if (argc == 1)
 		return (1);
 	else
-		init_stack_a(&stack_a, argv + 1 , argc);
+		init_stack_a(&stack_a, argv + 1, argc);
 	sl = sorted_array(stack_a);
 	if (!sorted_list(stack_a))
 		check_list(&stack_a, &stack_b, size(stack_a), sl);

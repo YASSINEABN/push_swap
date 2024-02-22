@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:18:52 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/24 16:29:35 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:26:19 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,17 @@ void			rotate_tmp(t_cstacka **stack, t_l **stack_a, t_l **stack_b,
 					int *sorted_list);
 void			push_max(t_cstacka **stack, t_l **stack_a, t_l **stack_b,
 					int *sorted_list);
+void			four_sort(t_l **stack_a, t_l **stack_b);
 void			push_item(t_l **stack_a, t_l **stack_b, t_cstacka **stack);
 void			init_svm(t_cstacka **stack, int *sorted_list);
 void			make_stack_a(t_l **stack_a, t_l **stack_b, int *sorted_list);
 void			five_sort(t_l **stack_a, t_l **stack_b);
 char			**ft_split(char const *s, char c);
-void	init_stack_a(t_l **a, char **argv,int ac);
+void			init_stack_a(t_l **a, char **argv, int ac);
 int				error_syntax(char *str_n);
 int				error_duplicate(t_l *a, int n);
 void			free_stack(t_l **stack);
-void			free_errors(t_l **a);
+void			free_errors(t_l **a, char **s);
 int				ft_isdigit(int c);
 void			large_sort(t_l **stack_a, t_l **stack_b, int *sorted_list);
 void			rra(t_l **stack_a, int checker);

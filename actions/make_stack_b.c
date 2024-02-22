@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:09 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/23 19:49:28 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/02/15 08:48:36 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	make_stack_b(t_l **stack_a, t_l **stack_b, int *sorted_list)
 	t_coords	*coords;
 
 	init_coords_stack_b(size(*stack_a), &coords);
-	if (size(*stack_a) == 4)
-		coords->offset = 4;
 	while (1)
 	{
 		if (check_value(sorted_list, coords, (*stack_a)->value))

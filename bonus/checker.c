@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:20:13 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/24 16:43:16 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/02/21 23:25:52 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	execute(t_l **stack_a, t_l **stack_b, char *line)
 	if (!ft_strcmp(line, "rra\n"))
 		rra(stack_a, 1);
 	if (!ft_strcmp(line, "rrb\n"))
-		rrb(stack_a, 1);
+		rrb(stack_b, 1);
 	if (!ft_strcmp(line, "pa\n"))
 		pa(stack_a, stack_b, 1);
 	execute2(stack_a, stack_b, line);
@@ -86,13 +86,12 @@ int	main(int argc, char *argv[])
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else
-		init_stack_a(&stack_a, argv + 1, 0);
+		init_stack_a(&stack_a, argv + 1, argc);
 	line = get_next_line(0);
 	process_line(&stack_a, &stack_b, &line, &check);
 	check_error(check, stack_a, stack_b);
 	free_stacks(&stack_a);
 	free_stacks(&stack_b);
-	free(stack_b);
 	free(line);
 	return (0);
 }

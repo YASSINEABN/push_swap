@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=address
 NAME = push_swap
 NAME2 = push_swap.a
 SRC = push_swap.c \
@@ -23,10 +23,17 @@ SRC = push_swap.c \
     utils/handles_error.c \
     utils/init_stack_a.c utils/ft_split.c utils/ft_isdigit.c \
     actions/sort_stacks.c actions/rr.c utils/ft_strcmp.c actions/sb.c \
+    actions/sort_four.c \
 
 BONUS = checker
 BONUS_SRCS = bonus/checker.c bonus/get_next_line/get_next_line.c \
             bonus/get_next_line/get_next_line_utils.c bonus/bonus_utils.c \
+             actions/pb.c actions/ra.c actions/rra.c \
+                actions/rrb.c actions/sa.c actions/rb.c \
+                  actions/rr.c utils/ft_strcmp.c actions/sb.c \
+                   utils/init_stack_a.c actions/pa.c utils/handles_error.c \
+                   utils/ft_split.c utils/ft_isdigit.c utils/sorted_list.c \
+                   utils/last_node.c
 
 BOBJS = $(BONUS_SRCS:.c=.o)
 
@@ -41,7 +48,7 @@ $(NAME): $(OBJ)
 bonus: $(BONUS)
 
 $(BONUS): $(BOBJS)
-	$(CC) $(CFLAGS) -o $(BONUS) $(BOBJS) push_swap.a
+	$(CC) $(CFLAGS) -o $(BONUS) $(BOBJS) 
 
 clean:
 	rm -f $(OBJ) $(BOBJS)

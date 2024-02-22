@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/nfs/homes/yaboulan/Desktop/push_swap",
-      "program": "/nfs/homes/yaboulan/Desktop/push_swap/build/Debug/outDebug",
+      "cwd": "/nfs/homes/yaboulan/Desktop/pp",
+      "program": "/nfs/homes/yaboulan/Desktop/pp/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

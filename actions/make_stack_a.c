@@ -6,7 +6,7 @@
 /*   By: yaboulan <yaboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:19:06 by yaboulan          #+#    #+#             */
-/*   Updated: 2024/01/24 11:56:06 by yaboulan         ###   ########.fr       */
+/*   Updated: 2024/02/21 23:32:03 by yaboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	make_stack_a(t_l **stack_a, t_l **stack_b, int *sorted_list)
 	t_cstacka	*coords;
 
 	coords = malloc(sizeof(t_cstacka));
+	if (!coords)
+		return ;
 	init_coords_stack_a(&coords, *stack_b, sorted_list);
 	first_push(stack_a, stack_b, sorted_list, &coords);
 	while ((*stack_b))
